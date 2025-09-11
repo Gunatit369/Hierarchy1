@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+
+    display: grid;
+    align-items: center;
+    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tree{
+  
+
+    align-items: center;
+    text-align:center;
+}
+.tree ul{
+    padding-top: 20px;
+    position: relative;
+   transition: 0.5s;
+}
+.tree li{
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 10px;
+    transition: 0.5s;
+}
+.secod li{
+    display: block; 
+     
+}
+
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 51%;
+    height: 10px;
+    }
+.tree li::after{
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+
+.tree li:only-child:after, .tree li:only-child:before{
+    display: none;
+}
+.tree li:only-child{
+    padding-top: 0;
+}
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.tree ul ul::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+.tree a{
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration-line: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.tree a img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px !important;
+    border-radius: 100px;
+    margin:auto;
+
+
+}
+.tree a span{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    color: #666;
+    padding: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+    .tree .secod li::before, .tree .secod li::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    border-top: 1px solid #ccc;
+   width:0%;
+    height: 20px;
+}
+
+.tree li a:hover, .tree li a:hover img, .tree li a:hover span, .tree li a:hover+ul li a{
+  background: #c8e4f8; 
+  color: #000; 
+  border: 1px solid #94a0b4;
+    box-shadow: 0px 0px 8px -5px #5f5f5f;
+}
+
+.tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before{
+  border-color:  #94a0b4;
+}
+@media (max-width: 768px) {
+  .tree{
+    width: 990%;
+    height: auto;
+    text-align:center;
+}
+
+.tree ul{
+    padding-top: 20px;
+    position: relative;
+   transition: 0.5s;
+}
+  .tree li{
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+  
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 51%;
+    height: 10px;
+    }
+.tree li::after{
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+
+.tree li:only-child:after, .tree li:only-child:before{
+    display: none;
+}
+.tree li:only-child{
+    padding-top: 0;
+}
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.tree ul ul::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+.tree a{
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration-line: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.tree a img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px !important;
+    border-radius: 100px;
+    margin:auto;
+
+
+}
+.tree a span{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    color: #666;
+    padding: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+    .tree .secod li::before, .tree .secod li::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    border-top: 1px solid #ccc;
+   width:0%;
+    height: 20px;
+}
+      .secod li{
+    display: block; 
+   
+     
+}
+.tree .secod li::before, .tree .secod li::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    border-top: 1px solid #ccc;
+   width:0%;
+    height: 20px;
+}
+}
+
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <uL>
+            <li><a href="#"><img src="img.jpeg" alt=""><br><span>Hero</span></a>
+                <ul>
+             <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Iron Man</span></a>
+                </li>
+                <ul>
+                    <li ><a href="#"><img src="img.jpeg" alt=""><br><span>Spider Man</span></a>
+                        <ul>
+                            <li><a href="#"><img src="img.jpeg" alt=""><br><span>Joker</span></a>
+                            <ul>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>A</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                </ul>
+                                </li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>B</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                </ul>
+                                </li>
+
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>C</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                </ul>
+                                </li>
+                                <li><a href="#"><img src="img.jpeg" alt=""><br><span>D</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>DA</span></a>
+                                    <ul>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                               
+                                    </ul>
+                                    </li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>DB</span></a>
+                                     <ul>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>                                    
+                                    </ul>
+                                    </li>               
+                                </ul>
+                                </li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>F</span></a>
+                                  <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                </ul>
+                                </li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>G</span></a>
+                                  <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                </ul>
+                            </li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>I</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                </ul>
+                                </li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>J</span></a>
+                                <ul>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                    <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                                
+                            </li>
+                            
+                          <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>captain america</span></a>
+                         <ul >
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jigar Bhai</span></a></li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jignesh Bhai</span></a></li>
+                                <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jay Bhai</span></a></li>
+                              
+                            </ul>
+                            </li>
+                           
+                        </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#"><img src="img.jpeg" alt=""><br><span>great Child</span></a>
+                    <ul>
+                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jigar Bhai</span></a>
+                        <ul>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                        </ul>
+                        </li>
+                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jignesh Bhai</span></a>
+                        <ul>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                     <li><a href="#"><img src="img.jpeg" alt=""><br><span>great Child</span></a>
+                     <ul>
+                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jigar Bhai</span></a>
+                        <ul>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                        </ul>
+                        </li>
+                        <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>Jignesh Bhai</span></a>
+                        <ul>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>vr</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>best</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                            <li class="secod"><a href="#"><img src="img.jpeg" alt=""><br><span>sliver sufer</span></a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </uL>
+    </div>
+</body>
+</html>
