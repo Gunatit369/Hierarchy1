@@ -22,8 +22,10 @@ body{
 }
 
 .tree{
-  
+  margin-left: auto;
+    margin-right: auto;
 
+    width: 110%;
     align-items: center;
     text-align:center;
 }
@@ -124,6 +126,7 @@ body{
     height: 20px;
 }
 
+
 .tree li a:hover, .tree li a:hover img, .tree li a:hover span, .tree li a:hover+ul li a{
   background: #c8e4f8; 
   color: #000; 
@@ -134,9 +137,14 @@ body{
 .tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before{
   border-color:  #94a0b4;
 }
+/* Add this class to your CSS */
+.ancestor-highlight {
+  background: #ffeadb; /* A distinct color for parents/ancestors */
+  border-color: #f5c59b !important;
+}
 @media (max-width: 768px) {
   .tree{
-    width: 990%;
+    width: 810%;
     height: auto;
     text-align:center;
 }
@@ -403,10 +411,41 @@ body{
         </uL>
         </li>
     </div>
-   
+    </div>
+
+    <script>
+        
+        const treeLinks = document.querySelectorAll('.tree a');
+
+        treeLinks.forEach(link => {
+        
+            link.addEventListener('mouseover', (event) => {
+                
+                event.stopPropagation();
+
+                let currentElement = link.parentElement; 
+
+            
+                while (currentElement && !currentElement.classList.contains('tree')) {
+                
+                    const parentLink = currentElement.querySelector(':scope > a');
+                    if (parentLink) {
+                        parentLink.classList.add('ancestor-highlight');
+                    }
+                    
+                    currentElement = currentElement.parentElement.closest('li');
+                }
+            });
+
+        
+            link.addEventListener('mouseout', () => {
+                treeLinks.forEach(l => l.classList.remove('ancestor-highlight'));
+            });
+        });
+        
+    </script>
+
 </body>
 </html>
-
-
-
-
+</body>
+</html>
